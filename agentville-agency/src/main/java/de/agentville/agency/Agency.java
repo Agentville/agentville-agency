@@ -1,6 +1,8 @@
 package de.agentville.agency;
 
+import de.agentville.agency.gui.AgencyFX;
 import de.agentville.agency.gui.AgencyGUI;
+import javafx.application.Application;
 
 /**
  * Hello world!
@@ -12,12 +14,12 @@ public class Agency
     {
         System.out.println( "Hello World!" );
         
-        AgencyGUI gui = new AgencyGUI();
+    	AgencyFX agencyfx = new AgencyFX();
+    	Application.launch(AgencyFX.class, args);
+
+    	AgencyGUI gui = new AgencyGUI();
 		gui.setBounds(10, 10, 420, 680);
-//		gui.show();
-		
-//		gui.setSize(680, 575);
-//		gui.setLocation(320, 160);
+		gui.setLocationRelativeTo(null);
 		gui.setVisible(true);
 		
     }
