@@ -22,7 +22,7 @@ public class AgencyGUI extends JFrame {
 
 	public AgencyGUI() {
 		
-		this.setTitle("Agency 4.3.2");
+		this.setTitle("Agency 0.0.1");
 		
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {

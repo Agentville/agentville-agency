@@ -18,7 +18,7 @@ public class Agency
     	Application.launch(AgencyFX.class, args);
 
     	AgencyGUI gui = new AgencyGUI();
-		gui.setBounds(10, 10, 420, 680);
+		gui.setBounds(10, 10, 800, 600);
 		gui.setLocationRelativeTo(null);
 		gui.setVisible(true);
 		
