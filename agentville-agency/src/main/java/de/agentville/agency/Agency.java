@@ -1,18 +1,18 @@
-package agentville.agency;
+package de.agentville.agency;
 
-import agentville.agency.gui.AppWindow;
+import de.agentville.agency.gui.AgencyGUI;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class Agency 
 {
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
         
-        AppWindow gui = new AppWindow();
+        AgencyGUI gui = new AgencyGUI();
 		gui.setBounds(10, 10, 420, 680);
 //		gui.show();
 		
@@ -22,3 +22,4 @@ public class App
 		
     }
 }
+
