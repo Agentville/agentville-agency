@@ -27,9 +27,8 @@ public class Agency {
     	 } else {
     		 logger.error("true");
     	 }
-    	 logger.trace("Exiting application.");
 
-        System.out.println( "Hello World!" );
+        //System.out.println( "Hello World!" );
         
     	AgencyGUI agencyfx = new AgencyGUI();
     	Application.launch(AgencyGUI.class, args);
@@ -39,6 +38,8 @@ public class Agency {
 //		gui.setLocationRelativeTo(null);
 //		gui.setVisible(true);
 		
+    	logger.trace("Exiting application.");
+    	
     }
 }
 
