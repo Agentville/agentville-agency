@@ -1,17 +1,34 @@
 package de.agentville.agency;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import de.agentville.agency.gui.AgencyFX;
 import de.agentville.agency.gui.AgencyGUI;
 import javafx.application.Application;
 
 /**
- * Hello world!
+ * 
  *
  */
-public class Agency 
-{
-    public static void main( String[] args )
-    {
+public class Agency {
+	
+	// Define a static logger variable so that it references the
+	 // Logger instance named "Agency".
+	private static final Logger logger = LogManager.getLogger(Agency.class);	
+	
+    public static void main( String[] args ) {
+    	
+    	// Set up a simple configuration that logs on the console.
+    	 logger.trace("Entering application.");
+    	 boolean bar = true;
+    	 if (!bar) {
+    		 logger.error("false");
+    	 } else {
+    		 logger.error("true");
+    	 }
+    	 logger.trace("Exiting application.");
+
         System.out.println( "Hello World!" );
         
     	AgencyFX agencyfx = new AgencyFX();
