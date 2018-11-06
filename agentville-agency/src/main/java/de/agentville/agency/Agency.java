@@ -3,7 +3,7 @@ package de.agentville.agency;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-import de.agentville.agency.gui.AgencyFX;
+import de.agentville.agency.gui.AgencyGUI;
 import de.agentville.agency.gui.AgencyGUI;
 import javafx.application.Application;
 
@@ -31,13 +31,13 @@ public class Agency {
 
         System.out.println( "Hello World!" );
         
-    	AgencyFX agencyfx = new AgencyFX();
-    	Application.launch(AgencyFX.class, args);
+    	AgencyGUI agencyfx = new AgencyGUI();
+    	Application.launch(AgencyGUI.class, args);
 
-    	AgencyGUI gui = new AgencyGUI();
-		gui.setBounds(10, 10, 800, 600);
-		gui.setLocationRelativeTo(null);
-		gui.setVisible(true);
+//    	AgencyGUI gui = new AgencyGUI();
+//		gui.setBounds(10, 10, 800, 600);
+//		gui.setLocationRelativeTo(null);
+//		gui.setVisible(true);
 		
     }
 }

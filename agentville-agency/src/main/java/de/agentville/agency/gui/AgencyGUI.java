@@ -1,141 +1,58 @@
 package de.agentville.agency.gui;
 
-import java.awt.SystemTray;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.text.NumberFormat;
+/*
+ * Vollständige Traybar-Lösung:
+ * https://gist.github.com/jewelsea/e231e89e8d36ef4e5d8a
+ * 
+ * Auch interessant:
+ * https://stackoverflow.com/questions/12571329/javafx-app-in-system-tray/12571924#12571924
+ */
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import de.saxsys.mvvmfx.FluentViewLoader;
+import de.saxsys.mvvmfx.ViewTuple;
 
-public class AgencyGUI extends JFrame {
-
-	JTextField 	textfield_dm;
-	JTextField 	textfield_euro;
-
-	JButton		button;
-
-
-	public AgencyGUI() {
+ 
+public class AgencyGUI extends Application {
+    
+	@Override
+    public void start(Stage stage) {
 		
-		this.setTitle("Agency 0.0.1");
+		stage.setTitle("Agentville Agency Vers. 0.0.1");
+
+		final ViewTuple<AgencyView, AgencyViewModel> viewTuple = FluentViewLoader.javaView(AgencyView.class).load();
+
+		final Parent root = viewTuple.getView();
+		stage.setScene(new Scene(root));
+		stage.show();
 		
-		this.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent e) {
-			doClose();}});
-		
-		this.setLayout(null);
-		
-		if (SystemTray.isSupported()) {
-			
-			System.out.println("SystemTray");
-		}
-
-		this.initWindow();
-
-		this.addWindowListener(new WindowListener() {
-			public void windowClosed(WindowEvent arg0) {
-			}
-
-			public void windowActivated(WindowEvent e) {
-			}
-
-			public void windowClosing(WindowEvent e) {
-				System.exit(0);
-			}
-
-			public void windowDeactivated(WindowEvent e) {
-			}
-
-			public void windowDeiconified(WindowEvent e) {
-			}
-
-			public void windowIconified(WindowEvent e) {
-			}
-
-			public void windowOpened(WindowEvent e) {
-			}
-		});
-	}
-
-	protected void initWindow() {
-		
-		// Instanzieren:
-		textfield_dm = new JTextField();
-		textfield_euro = new JTextField();
-
-		button = new JButton("DM in Euro");
-
-		button.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				buttonBerechneClicked();
-			}
-
-		});
-
-		// Positionen festlegen
-		textfield_dm.setBounds(5,10,400,25);
-		textfield_euro.setBounds(5,80,400,25);
-
-		button.setBounds(300,110,100,30);
-
-		// Elemente dem Fenster hinzufügen:
-		this.getContentPane().add(textfield_dm);
-		this.getContentPane().add(textfield_euro);
-		this.getContentPane().add(button);
-
-
-		this.pack();
-	}
-
-	public void buttonBerechneClicked() {
-		
-		// Hole Zahl aus Textfeld:
-		double dm = 0;
-		try {
-			dm = Double.parseDouble(textfield_dm.getText());
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			dm = -1;
-		}
-
-		// Falls das n Okay ist:
-
-		if (dm>=0) {
-		// Rechne:
-			double euro = this.dm2euro(dm);
-
-			// Packe a in Ausgabefeld:
-			NumberFormat nf = NumberFormat.getInstance();
-
-			nf.setMaximumFractionDigits(2);
-
-			String ausgabe = nf.format(euro);
-
-
-
-			textfield_euro.setText(ausgabe);
-		} else {
-			textfield_euro.setText("Eingabe ist nicht in Ordnung.");
-		}
-	}
-
-	public double dm2euro(double dm) {
-		
-		double euro = (dm / 1.95583);
-
-		return euro;
-	}
-	
-	public void doClose() {
-//		GuiEvent e = new GuiEvent(null, WumpulusAgent.EVENT_CLOSE);
-//		myAgent.onGuiEvent(e);
-	}
-
-}
+    	
+//        Button btn = new Button();
+//        btn.setText("Open TrayBar-Window");
+//        btn.setOnAction(new EventHandler<ActionEvent>() {
+//        	 
+//  //          @Override
+//            public void handle(ActionEvent event) {
+//                System.out.println("Hello World!");
+//            }
+//        });
+//
+//        StackPane root = new StackPane();
+//        root.getChildren().add(btn);
+//
+//        Scene scene = new Scene(root, 800, 600);
+//
+//        primaryStage.setTitle("Agentville Agency Vers. 0.0.1");
+//        primaryStage.setScene(scene);        
+//        primaryStage.show();
+        
+    }
+    
+ }
