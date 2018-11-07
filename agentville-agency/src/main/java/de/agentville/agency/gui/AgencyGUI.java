@@ -8,10 +8,16 @@ package de.agentville.agency.gui;
  * https://github.com/sialcasa/mvvmFX/wiki/Getting-Started-HelloWorld-(deutsch)
  * 
  * 
+ * JavaFX:
+ * https://docs.oracle.com/javase/8/javafx/layout-tutorial/builtin_layouts.htm#JFXLY102
+ * https://o7planning.org/en/10629/javafx-borderpane-layout-tutorial
+ * https://docs.oracle.com/javase/8/javafx/get-started-tutorial/hello_world.htm
+ * 
+ * 
  * Vollständige Traybar-Lösung:
  * https://gist.github.com/jewelsea/e231e89e8d36ef4e5d8a
  * 
- * Auch interessant:
+ * Auch interessant für TrayBar:
  * https://stackoverflow.com/questions/12571329/javafx-app-in-system-tray/12571924#12571924
  */
 
@@ -37,44 +43,23 @@ public class AgencyGUI extends Application {
 		
 		stage.setTitle("Agentville Agency Vers. 0.0.1");
 		
-//        // Create MenuBar
-//        MenuBar menuBar = new MenuBar();
-//        
-//        // Create menus
-//        Menu fileMenu = new Menu("File");
-//        Menu editMenu = new Menu("Edit");
-//        Menu helpMenu = new Menu("Help");
-//        
-//        // Create MenuItems
-//        MenuItem newItem = new MenuItem("New");
-//        MenuItem openFileItem = new MenuItem("Open File");
-//        MenuItem exitItem = new MenuItem("Exit");
-//        
-//        MenuItem copyItem = new MenuItem("Copy");
-//        MenuItem pasteItem = new MenuItem("Paste");
-//        
-//        // Add menuItems to the Menus
-//        fileMenu.getItems().addAll(newItem, openFileItem, exitItem);
-//        editMenu.getItems().addAll(copyItem, pasteItem);
-//        
-//        // Add Menus to the MenuBar
-//        menuBar.getMenus().addAll(fileMenu, editMenu, helpMenu);
-//        
-////        BorderPane root = new BorderPane();
-////        root.setTop(menuBar);
-////        Scene scene = new Scene(root, 350, 200);
-//
-//		
-//		
-		
 		final ViewTuple<AgencyView, AgencyViewModel> viewTuple = FluentViewLoader.javaView(AgencyView.class).load();
-
 		final Parent root = viewTuple.getView();
+		
 		
 //        root.setTop(menuBar);
 		
-		stage.setScene(new Scene(root));
+//		Scene menuBarScene = new Scene(menuBar);
+//		
+//		Scene scene = new Scene(root);
+//		
+//		
+//		stage.setScene(scene);
+//		stage.setScene(menuBarScene);
 		
+		stage.setScene(new Scene(root));
+		stage.setWidth(800);
+		stage.setHeight(600);
 		stage.show();
 		
     	
