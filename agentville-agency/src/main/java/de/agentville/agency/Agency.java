@@ -8,8 +8,8 @@ import de.agentville.agency.gui.AgencyGUI;
 import javafx.application.Application;
 
 /**
- * 
- *
+ * Preloader:
+ * https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/preloaders.html
  */
 public class Agency {
 	
@@ -19,27 +19,16 @@ public class Agency {
 	
     public static void main( String[] args ) {
     	
-    	// Set up a simple configuration that logs on the console.
-    	 logger.trace("Entering application.");
-    	 boolean bar = true;
-    	 if (!bar) {
-    		 logger.error("false");
-    	 } else {
-    		 logger.error("true");
-    	 }
+    	logger.trace("loading properties");
+    	
+    	PropertiesManager propertiesManager = new PropertiesManager();
+    	
+    	logger.trace("Entering application.");
 
-        //System.out.println( "Hello World!" );
-        
     	AgencyGUI agencyfx = new AgencyGUI();
     	Application.launch(AgencyGUI.class, args);
-
-//    	AgencyGUI gui = new AgencyGUI();
-//		gui.setBounds(10, 10, 800, 600);
-//		gui.setLocationRelativeTo(null);
-//		gui.setVisible(true);
 		
     	logger.trace("Exiting application.");
-    	
     }
 }
 

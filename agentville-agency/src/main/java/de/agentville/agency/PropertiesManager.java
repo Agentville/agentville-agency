@@ -8,7 +8,12 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class PropertiesManager {
+	
+	private static final Logger logger = LogManager.getLogger(PropertiesManager.class);
 	
 	String appDir = System.getProperty("user.dir");
 	String propFileName = "/agency.properties";
@@ -28,10 +33,10 @@ public class PropertiesManager {
 	
 	private void initProperties() {
 		
-		System.out.println(System.getProperty("user.dir"));
-		System.out.println(System.getProperty("user.home"));
-		System.out.println(System.getProperty("java.io.tmpdir"));
-		System.out.println(System.getProperties().get("basedir"));
+		logger.trace("user.dir: " + System.getProperty("user.dir"));
+		logger.trace("user.home: " + System.getProperty("user.home"));
+		logger.trace("java.io.tmpdir: " + System.getProperty("java.io.tmpdir"));
+		logger.trace("basedir: " + System.getProperties().get("basedir"));
 		
 		//System.getProperties().list( System.out );	//gibt alle system-properties aus.
 //		java.io.tmpdir=C:\Users\mstef\AppData\Local\Temp\
@@ -49,7 +54,7 @@ public class PropertiesManager {
 	
 	private void readProperties() {
 		
-		System.out.println("read properties");
+		logger.trace("read properties");
 		
 		try {
 
@@ -84,7 +89,7 @@ public class PropertiesManager {
 	
 	private void createPropertiesFile() {
 		
-		System.out.println("createProperties");
+		logger.trace("createProperties");
 
 		try {
 
@@ -93,7 +98,7 @@ public class PropertiesManager {
 			// save properties to project root folder
 			prop.store(output, null);
 			
-			System.out.println("DAtei erzeugt?");
+			logger.trace("Datei erzeugt?");
 
 		} catch (IOException io) {
 			io.printStackTrace();
@@ -116,6 +121,14 @@ public class PropertiesManager {
 		propValue = prop.getProperty(propName);
 		
 		return propValue;
+	}
+	
+	public void addPropertie(String propName, String propValue) {
+		
+	}
+	
+	public void removePropertie(String propName) {
+		
 	}
 	
 }
