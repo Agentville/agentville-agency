@@ -1,9 +1,8 @@
 package de.agentville.agency.gui;
 
+import de.saxsys.mvvmfx.ViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
-import de.saxsys.mvvmfx.ViewModel;
 
 public class AgencyViewModel implements ViewModel {
 

@@ -1,10 +1,10 @@
 package de.agentville.agency;
 
-import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import de.agentville.agency.gui.AgencyGUI;
-import de.agentville.agency.gui.AgencyGUI;
+import de.agentville.agency.PropertiesManager;
 import javafx.application.Application;
 
 /**

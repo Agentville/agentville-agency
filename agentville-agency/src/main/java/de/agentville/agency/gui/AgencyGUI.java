@@ -1,5 +1,8 @@
 package de.agentville.agency.gui;
 
+import de.saxsys.mvvmfx.FluentViewLoader;
+import de.saxsys.mvvmfx.ViewTuple;
+
 /*
  * mvvm mit mvvmfx:
  * https://github.com/sialcasa/mvvmFX/blob/develop/examples/mini-examples/helloworld-without-fxml/src/main/java/de/saxsys/mvvmfx/examples/helloworld/HelloWorldView.java
@@ -22,18 +25,9 @@ package de.agentville.agency.gui;
  */
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import de.saxsys.mvvmfx.FluentViewLoader;
-import de.saxsys.mvvmfx.ViewTuple;
 
  
 public class AgencyGUI extends Application {

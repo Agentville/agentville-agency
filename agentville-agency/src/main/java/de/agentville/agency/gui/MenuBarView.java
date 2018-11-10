@@ -6,16 +6,10 @@ import java.util.ResourceBundle;
 import de.saxsys.mvvmfx.InjectViewModel;
 import de.saxsys.mvvmfx.JavaView;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 public class MenuBarView extends HBox implements JavaView<MenuBarViewModel>, Initializable {
 //public class MenuBarView extends VBox implements JavaView<MenuBarViewModel>, Initializable {

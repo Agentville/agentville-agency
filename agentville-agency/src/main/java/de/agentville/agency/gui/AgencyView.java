@@ -8,12 +8,9 @@ import de.saxsys.mvvmfx.InjectViewModel;
 import de.saxsys.mvvmfx.JavaView;
 import de.saxsys.mvvmfx.ViewTuple;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 
 public class AgencyView extends BorderPane implements JavaView<AgencyViewModel>, Initializable {
 //public class AgencyView extends VBox implements JavaView<AgencyViewModel>, Initializable {
